@@ -19,13 +19,20 @@ font-family: 'Poppins', sans-serif;
 
 html {
     font-size: 62.5%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
     background: var(--bg-color);
     font-size: 'Poppins', sans-serif;
     color: var(--text-color);
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
 }
 
 html::-webkit-scrollbar-thumb {
@@ -37,8 +44,9 @@ html::-webkit-scrollbar-thumb {
     top: 0;
     left: 0;
     width: 100%;
-    padding: rgba(0, 0, 0, 0.7);
-    filter: drop-shadow();
+    padding:3rem 9%;
+    background: rgba(0, 0, 0, 0.7);
+    filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -418,3 +426,272 @@ span {
         width: 100%;
     }
  }
+
+/* Implementando Educação */
+
+.educ {
+    background: var(--second-bg-color);
+}
+.educ .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.educ .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: rgb(90, 51, 51);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -2px;
+}
+
+.educ .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.educ .container::after {
+    content: '\f501';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: -17px;
+    background-color: rgb(252, 252, 252);
+    border: 4px solid var(--main-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 100;
+    font-size: 1.89rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Font Awesome\ 5 Free";
+    color: rgb(90, 51, 51);
+}
+
+.educ .left {
+    left: 0;
+}
+
+.educ .right {
+    left: 50%;
+}
+
+.educ .left::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--main-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+.educ .right::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--main-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--main-color) transparent transparent;
+}
+
+.educ .right::after {
+    left: -16px;
+}
+.educ .content {
+    background: var(--main-color);
+    position: relative;
+    border-radius: 6px;
+}
+.educ .content .tag {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.educ .content .decs {
+    margin-left: 1.5rem;
+    padding-bottom: 1rem;
+}
+.educ .content .tag h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+.educ .content .decs p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:600px) {
+    .educ .timeline {
+        margin-top: 2rem;
+    }
+    .educ .timeline::after {
+        left: 31px;
+    }
+    .educ .container {
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+    }
+    .educ .container::after {
+        font-size: 2.2rem;
+    }
+    .educ .container::before {
+        left: 61px;
+        border: medium solid var(--main-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--main-color) transparent transparent;
+    }
+    .educ .left::after {
+        left: 15px;
+    }
+    .educ .right::after {
+        left: 15px;
+    }
+    .educ .right{
+        left: 0%;
+    }
+}
+
+/* Implementando Contatos */
+.contato h2 {
+    margin-bottom: 3rem;
+    color: white;
+}
+.contato form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.contato form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contato form .input-box input,
+.contato form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+    border: 2px solid var(--main-color);
+    margin: 1rem 0;
+    resize: none;
+}
+.contato form .btn {
+    margin-top: 2rem;
+}
+
+/* Implementando Footer */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--main-color);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: black;
+}
+
+.footer .social a {
+    font-size: 25px;
+    color: black;
+    border: 2px solid black;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-5px);
+    background: black;
+    color: var(--main-color);
+}
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: black;
+    border-bottom: 3px solid transparent; 
+    transition: 0.3s ease;
+}
+.footer ul li a:hover {
+    border-bottom: 3px solid black;
+}
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+} 
+.footer .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+@media (max-width:1285px) {
+    html{
+        font-size: 55%;
+    }
+    .services-container {
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 5rem;
+    }
+}
+@media(max-width:991px) {
+    .header{
+        padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .services {
+        padding-bottom: 7rem;
+    }
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width:895) {
+    .services h2{
+        margin-bottom: 3rem;
+    }
+    .services-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
